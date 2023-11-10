@@ -1,0 +1,109 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 16-Dez-2022 às 21:23
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 7.4.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `ticketstore`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `aberturaticket`
+--
+
+CREATE TABLE `aberturaticket` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `titulo_ticket` varchar(90) NOT NULL,
+  `descricao_ticket` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `aberturaticket`
+--
+
+INSERT INTO `aberturaticket` (`id`, `id_user`, `titulo_ticket`, `descricao_ticket`) VALUES
+(22, 42, 'teste 1 ', 'teste 2'),
+(23, 42, 'teste 1 ', 'teste 2'),
+(24, 42, 'Titulo tester', 'Mensagem teste'),
+(25, 42, 'teste 4 ', 'Mensagem teste');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `respostaticket`
+--
+
+CREATE TABLE `respostaticket` (
+  `id` int(11) NOT NULL,
+  `id_aberturaticket` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `resposta_ticket` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `respostaticket`
+--
+
+INSERT INTO `respostaticket` (`id`, `id_aberturaticket`, `id_user`, `resposta_ticket`) VALUES
+(3, 22, 1, 'teste'),
+(4, 22, 1, 'teste 2'),
+(5, 22, 1, 'teste 4'),
+(6, 22, 1, 'teste 4'),
+(7, 22, 1, 'teste 5 '),
+(9, 22, 1, 'teste 6 '),
+(10, 22, 1, 'teste 7'),
+(11, 24, 1, 'teste');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `aberturaticket`
+--
+ALTER TABLE `aberturaticket`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `respostaticket`
+--
+ALTER TABLE `respostaticket`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `aberturaticket`
+--
+ALTER TABLE `aberturaticket`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT de tabela `respostaticket`
+--
+ALTER TABLE `respostaticket`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
