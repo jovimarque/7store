@@ -1,0 +1,403 @@
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #0f0f0f;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* -------------- Menu -------------- */
+
+.topnav {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.topnav a {
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 14px 16px;
+  transition: all 2s ease;
+}
+
+.active {
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  color: #8B23FF;
+  transition: all 2s ease;
+}
+
+.topnav img {
+  width: 80px;
+}
+
+.topnav h2 {
+  font-size: 30px;
+}
+
+.topnav a.split {
+  color: #8B23FF;
+  font-size: 17px;
+}
+
+.topnav a.nada {
+  font-size: 17px;
+}
+
+.banner-menu-left img {
+  width: 70px;
+}
+
+.overlay {
+  width: 0;
+  height: 100%;
+  background-color: #0f0f0f;
+  z-index: 9;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  transition: all 0.5s;
+}
+
+.closebtn img {
+  display: none;
+}
+
+.nav-button {
+  cursor: pointer;
+  display: none;
+}
+
+/* -------------- Containers geral -------------- */
+
+.container {
+  width: 65%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  padding-top: 100px;
+}
+
+.container-color {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #151416;
+  margin-top: 150px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.container-sec {
+  width: 65%;
+  margin: 0 auto;
+}
+
+/* -------------- Checkout -------------- */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 30px;
+}
+
+.card-details {
+  background-color: #151416;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.card-details input:nth-child(8) {
+  background-color: #8B23FF;
+}
+
+.card-details input{
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #151416;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  color: rgb(170, 170, 170);
+}
+
+.card-details h3 {
+  color: white;
+}
+
+.card-cart-meth-items{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  /* background-color: #272727; */
+  border-radius: 10px;
+  padding: 10px;
+} 
+
+.card-cart-meth-items input{
+  width: 30px;
+}
+
+.card-cart-meth-items img {
+  width: 60px;
+  border-radius: 10px;
+}
+
+/* -------------- Footer -------------- */
+
+.banner6-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.banner6-footer-content-cards {
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  display: inline-block;
+}
+
+.banner6-footer-content-cards h2 {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.banner6-footer-content-cards p a {
+  color: #cccccc;
+  font-weight: 200;
+}
+
+.banner6-footer-content-cards img {
+  border-radius: 10px;
+  width: 100px;
+}
+
+.banner6-footer-content-cards li {
+  text-decoration: none;
+  display: block;
+}
+
+.banner6-footer-content-cards li a {
+  color: rgb(182, 182, 182);
+  transition: all 2s ease;
+  text-decoration: none;
+}
+
+.banner6-footer-content-cards li a:hover {
+  color: white;
+  transition: all 2s ease;
+}
+
+.banner6-footer-content-cards-icons img {
+  width: 20px;
+}
+
+.banner6-footer-content-cards-icons li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 10px 0;
+  border-radius: 50%;
+  background-color: #272727;
+  text-decoration: none;
+  transition: all 2s ease;
+}
+
+.banner6-footer-content-cards-icons li:hover {
+  background-color: rgb(101, 0, 184);
+  transition: all 2s ease;
+}
+
+.banner6-detail {
+  width: 100%;
+  background-color: white;
+  height: 1px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.banner6-text {
+  text-align: center;
+}
+
+.banner6-text h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.banner6-footer-content-cards p {
+  color: rgb(182, 182, 182);
+  width: 300px;
+}
+
+/* -------------- Responsividade -------------- */
+
+@media screen and (max-width: 1500px) {
+
+  /* Containers */
+
+  .container {
+      padding-bottom: 50px;
+      padding-top: 50px;
+  }
+
+  .container-color {
+      padding-top: 50px;
+      padding-bottom: 50px;
+  }
+
+  /* Menu 1 */
+
+  .b {
+      display: none;
+  }
+
+  .topnav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+  }
+
+  .overlay-b {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+  }
+
+  .closebtn {
+      border-radius: 10px;
+      display: block;
+      padding: 8px;
+  }
+
+  .closebtn img {
+      display: block;
+  }
+
+  .overlay img {
+      width: 30px;
+      height: 30px;
+  }
+
+  .nav-button {
+      border-radius: 10px;
+      background-color: #8B23FF;
+      padding: 8px;
+      display: block;
+  }
+
+  .nav-button img {
+      width: 30px;
+      height: 30px;
+  }
+
+  .nav-button {
+      cursor: pointer;
+  }
+
+  /* Banner 3 */
+
+  .banner3-content-cards {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+  }
+
+  /* Banner 4 */
+
+  .banner4-content-text-left-text {
+      font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+  }
+
+  .banner4-content-img-right {
+      display: none;
+  }
+
+  .banner4-content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+  }
+
+  /* Banner 5 */
+
+  .banner5-content-text-left {
+      font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+  }
+
+  .banner5-content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+  }
+
+
+  /* Banner 6 */
+
+  .banner6-footer-content-cards {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      display: inline-block;
+      margin: 20px;
+  }
+
+}
+
+@media screen and (max-width: 859px) {
+
+  /* Banner */
+
+  .banner-card-content-img {
+      display: none;
+  }
+
+}
+
+@media screen and (max-width: 464) {
+
+  /* Banner */
+
+
+}
