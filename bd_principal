@@ -1,0 +1,363 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 01-Dez-2022 às 20:36
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 7.4.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `777store`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adm`
+--
+
+CREATE TABLE `adm` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `pass` int(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `idSeller` int(11) DEFAULT NULL,
+  `idcustomer` int(11) DEFAULT NULL,
+  `idproduct` int(100) DEFAULT NULL,
+  `nameproduct` varchar(15) DEFAULT NULL,
+  `value` varchar(100) DEFAULT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `data` varchar(100) DEFAULT NULL,
+  `hash` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `orders`
+--
+
+INSERT INTO `orders` (`id`, `idSeller`, `idcustomer`, `idproduct`, `nameproduct`, `value`, `status`, `data`, `hash`) VALUES
+(53, 44, 42, 24, 'ain nobru', 'aaaaaaa', 'pending', NULL, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `value` varchar(100) DEFAULT NULL,
+  `name` varchar(7) DEFAULT NULL,
+  `idSeller` varchar(100) DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL,
+  `prodLogin` varchar(100) DEFAULT NULL,
+  `prodPass` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `products`
+--
+
+INSERT INTO `products` (`id`, `value`, `name`, `idSeller`, `img`, `prodLogin`, `prodPass`) VALUES
+(12, '200', 'Conta s', '1', NULL, '', ''),
+(13, '200', 'Conta s', '1', NULL, '', ''),
+(15, '1', 'Steam', '1', NULL, '', ''),
+(17, '28.50', 'Netflix', '35', NULL, '', ''),
+(18, '35.90', 'Game Pa', '35', NULL, '', ''),
+(19, '10', 'Nitro', '35', NULL, '', ''),
+(20, 'R$50,00', 'nitro a', '35', NULL, '', ''),
+(21, 'R$10,00', 'Gamepas', '35', NULL, '', ''),
+(22, 'aaaaaa', 'aaaaaa', '35', NULL, NULL, NULL),
+(23, 'aaaaaaa', 'aaa', '35', NULL, NULL, NULL),
+(24, 'aaaaaaa', 'aaa', '35', NULL, NULL, NULL),
+(25, 'aaaaaaaaaaaaaaaaaa', 'aaaaa', '35', NULL, NULL, NULL),
+(26, 'aaaaaaaaaaaaaaaaaa', 'aaaaa', '35', NULL, NULL, NULL),
+(27, '', '', '35', NULL, NULL, NULL),
+(28, '', '', '35', NULL, NULL, NULL),
+(29, '', '', '35', NULL, NULL, NULL),
+(30, '', '', '35', NULL, NULL, NULL),
+(31, '', '', '35', NULL, NULL, NULL),
+(32, '', '', '35', NULL, NULL, NULL),
+(33, '', '', '35', NULL, NULL, NULL),
+(34, '', '', '35', NULL, 'aaaaaaaa', 'aaaa'),
+(35, 'aaaaaaaaaaaa', 'aaaa', '35', NULL, 'aaaaaa', 'aaaaaaaaaa'),
+(36, 'aaaaaaaaaaaa', 'aaaa', '35', NULL, 'aaaaaa', 'aaaaaaaaaa'),
+(37, 'aaaaaaaaaaaa', 'aaaa', '35', NULL, 'aaaaaa', 'aaaaaaaaaa');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `sellers`
+--
+
+CREATE TABLE `sellers` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `cpf` int(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `telefone` int(50) NOT NULL,
+  `senha` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `sellers`
+--
+
+INSERT INTO `sellers` (`id`, `name`, `cpf`, `email`, `telefone`, `senha`) VALUES
+(1, '0', 0, '0', 0, '0'),
+(2, '0', 0, '0', 0, '0'),
+(3, 'aaaaaaaa', 0, 'aaaaaaaaa', 0, 'aaaaaaaa'),
+(4, 'aaaaaaaaaaaaaaaaa', 0, 'aaaaaaaaaaaa', 0, 'aaaaaaaaa'),
+(5, 'aaaaaaaaaaaaaaaaa', 0, 'aaaaaaaaaaaa', 0, 'aaaaaaaaa'),
+(6, 'aaaaaaaaaaaaaaaaa', 0, 'aaaaaaaaaaaa', 0, 'aaaaaaaaa'),
+(7, ' James silva franco', 23121212, 'james@email.com', 11, '121'),
+(8, 'Paulo roberto', 2147483647, 'paulo@email.com', 12212, '45454');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `smtp`
+--
+
+CREATE TABLE `smtp` (
+  `id` int(11) NOT NULL,
+  `host` varchar(100) DEFAULT NULL,
+  `user` varchar(100) DEFAULT NULL,
+  `pass` varchar(100) DEFAULT NULL,
+  `port` int(11) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `certified` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `stars`
+--
+
+CREATE TABLE `stars` (
+  `id` int(11) NOT NULL,
+  `amount_star` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `comment` varchar(100) NOT NULL,
+  `idUser` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `stars`
+--
+
+INSERT INTO `stars` (`id`, `amount_star`, `created`, `comment`, `idUser`) VALUES
+(62, 5, '2022-09-11 18:05:51', 'INCRIVEL!!!!!! primeira vez que nao sou roubado.', 37),
+(63, 5, '2022-09-11 18:08:12', 'INCRIVEL!!!!!! primeira vez que nao sou roubado.', 37),
+(64, 5, '2022-09-11 18:09:26', 'INCRIVEL!!!!!! primeira vez que nao sou roubado.', 36),
+(65, 2, '2022-09-12 17:42:29', 'aaaaaa', 37),
+(66, 2, '2022-09-12 17:45:00', 'dsfgsdf', 35),
+(67, 2, '2022-09-12 18:10:00', 'dsfgsdf', 35);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `statuspixresponse`
+--
+
+CREATE TABLE `statuspixresponse` (
+  `id` int(11) NOT NULL,
+  `status` varchar(30) NOT NULL,
+  `idtransacao` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `statuspixresponse`
+--
+
+INSERT INTO `statuspixresponse` (`id`, `status`, `idtransacao`) VALUES
+(12, 'pending', 433819496);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ticket`
+--
+
+CREATE TABLE `ticket` (
+  `id` int(10) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `description` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `ticket`
+--
+
+INSERT INTO `ticket` (`id`, `userid`, `description`) VALUES
+(16, 35, NULL),
+(17, 35, NULL),
+(18, 35, 'adsfafdafafa'),
+(19, 35, 'zfxcgfsxsd'),
+(20, 35, 'dsadads');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `nivel` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `pass`, `nivel`) VALUES
+(42, 'Joao teste', 'joao@gmail.com', '123', 2),
+(43, 'User teste', 'user@gmail.com', '123', 1),
+(44, 'Kauan teste', 'kauan@gmail.com', '123', 1);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `adm`
+--
+ALTER TABLE `adm`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `sellers`
+--
+ALTER TABLE `sellers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `smtp`
+--
+ALTER TABLE `smtp`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `stars`
+--
+ALTER TABLE `stars`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `statuspixresponse`
+--
+ALTER TABLE `statuspixresponse`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `ticket`
+--
+ALTER TABLE `ticket`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `adm`
+--
+ALTER TABLE `adm`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT de tabela `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT de tabela `sellers`
+--
+ALTER TABLE `sellers`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de tabela `smtp`
+--
+ALTER TABLE `smtp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `stars`
+--
+ALTER TABLE `stars`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- AUTO_INCREMENT de tabela `statuspixresponse`
+--
+ALTER TABLE `statuspixresponse`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de tabela `ticket`
+--
+ALTER TABLE `ticket`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de tabela `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
